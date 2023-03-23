@@ -1,24 +1,25 @@
 #include "main.h"
 
-/**
- * Return: a square made of '#'
- */
+}
+
+
 void print_square(int size)
 {
-	int vert, horiz;
+	int x, y;
 
-	if (size <= 0)
-	{
+	y = 0;
+
+	if (size < 1)
 		_putchar('\n');
-		return;
-	}
 
-	for (vert = size ; vert > 0 ; vert--)
+	while (y < size)
 	{
-		for (horiz = size ; horiz > 0 ; horiz--)
+		x = 0;
+		while (x < size)
 		{
 			_putchar('#');
+			x++;
 		}
 		_putchar('\n');
-	}
+		y++;
 }
