@@ -1,23 +1,31 @@
 #include "main.h"
-
 /**
- * _strncat - appends first n characters from src to dest
+ * _strncat - concatenates two strings
+ * @dest: input parameter string
+ * @src: input parameter string
+ * @n: times to iterations
  *
- * @dest: destination array
- * @src: source array
- * @n: number of characters
- *
- * Return: dest string
+ * Return: dest
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *ptr = dest;
+	int a;
+	int b;
 
-	while (*ptr != 0)
-		ptr++;
-	while (n-- > 0)
-		*ptr++ = *src++;
-	*ptr = 0;
+	a = 0;
 
+	while (dest[a] != 0)
+	{
+		a++;
+	}
+
+	b = 0;
+
+	while (src[b] != 0 && b < n)
+	{
+		dest[a] = src[b];
+		a++;
+		b++;
+	}
 	return (dest);
 }
