@@ -1,21 +1,28 @@
 #include "main.h"
-
 /**
- * @src does not need to be null-terminated
- * @dest: destination array 
- * @n: number of characters
- *
- * Return: dest string
+ * @dest: the string that will modified.
+ * @src: the string that ill be concatenated to @dest.
+ * @n: copy up to poistion 'n'
+ * Return: a pointer to @dest
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *ptr = dest;
+	int index_01 = 0;
+	int index_02 = 0;
 
-	while (*ptr != 0)
-		ptr++;
-	while (n-- > 0)
-		*ptr++ = *src++;
-	*ptr = 0;
+	while (dest[index_01] != '\0')
+	{
+		index_01++;
+	}
+
+	while (index_02 < n && src[index_02] != '\0')
+	{
+		dest[index_01 + index_02] = src[index_02];
+		index_02++;
+
+	}
+	dest[index_01 + index_02] = '\0';
 
 	return (dest);
 }
+
