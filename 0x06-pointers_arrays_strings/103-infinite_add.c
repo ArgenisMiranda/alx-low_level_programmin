@@ -1,3 +1,4 @@
+#include <string.h>
 /**
  * infinite_add - Add up two numbers stored in given char arrays
  * @n1: The first number
