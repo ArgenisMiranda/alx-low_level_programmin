@@ -2,7 +2,6 @@
 
 /**
  * wildcmp - compares two strings and returns 1
- * compare_strings - Compares two strings to check if they are identical
  * if the strings can be considered identical,
  * otherwise return 0.
  * @s1: the normal string
