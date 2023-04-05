@@ -1,50 +1,34 @@
 #include "main.h"
 
-/**
- * is_divisible - tests whether the number is divisible
- * @n: the number being tested
- * @div: the divisor
- *
- * Description: The function finds whether the number is divisible
- * by 2 and return the value
- * Return: result
- */
-int is_divisible(int n, int div)
-{
-	if (n % div == 0)
-	{
-		return (0);
-	}
-
-	if (div == n / 2)
-	{
-		return (1);
-	}
-
-	return (is_divisible(n, div + 1));
-}
+int prime_number(int n, int i);
 
 /**
- * is_prime_number - is the integer a prime number
- * @n: the number being tested
+ * is_prime_number - fuction the check if a number is a prime.
+ * @n: number to be tested.
  *
- * Description: The function tests whether is a prime number
- * and returns the appropriate value.
- * Return: result
+ * Return: 1 if a Prime else 0
  */
 int is_prime_number(int n)
 {
-	int div = 2;
-
 	if (n <= 1)
-	{
 		return (0);
-	}
+	return (prime_number(n, n - 1));
+}
 
-	if (n <= 3)
-	{
+/**
+ * prime_number - help fuction function for is_prime_number.
+ * @n: Original number to be tested.
+ * @i: Original number to test with.
+ *
+ * Return: 1 if a Prime else 0
+ */
+int prime_number(int n, int i)
+{
+	if (i == 1)
 		return (1);
-	}
-
-	return (is_divisible(n, div));
+	else if (n % i == 0)
+		return (0);
+	else if (n % i != 0)
+		return (prime_number(n, i - 1));
+	return (0);
 }
