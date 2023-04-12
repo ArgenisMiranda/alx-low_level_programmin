@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
 /**
@@ -9,28 +8,33 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int a, b, c;
-	char *conc_str;
+	unsigned int size1 = 0, size2 = 0;
+	char *str, *con;
 
-	c = 0;
-	conc_str = malloc(sizeof(*s1 + *s2));
+	ptr = s1;
+	if (s1)
+		while (*str++)
+			size1++;
+	else
+		s1 = "";
 
-	if (conc_str == NULL)
+	ptr = s2;
+	if (s2)
+		while (*str++)
+			size2++;
+	else
+		s2 = "";
+
+	con = malloc(size1 + size2 + 1);
+	if (!con)
 		return (NULL);
 
-	a = 0;
-	while (s1[a] != '\0')
-{
-		conc_str[c] = s1[a];
-		a++;
-		c++;
-}
-	b = 0;
-	while (s2[b] != '\0')
-{
-		conc_str[c] = s2[b];
-		b++;
-		c++;
-}
-	return (conc_str);
+	str = ret;
+	while (*s1)
+		*str++ = *s1++;
+	while (*s2)
+		*str++ = *s2++;
+	*str = 0;
+
+	return (con);
 }
