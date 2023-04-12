@@ -30,7 +30,7 @@ char **strtow(char *str)
 			{
 				end = i;
 				cat = (char *) malloc(sizeof(char) * (c + 1));
-				if (tmp == NULL)
+				if (cat == NULL)
 					return (NULL);
 				while (start < end)
 					*cat++ = str[start++];
