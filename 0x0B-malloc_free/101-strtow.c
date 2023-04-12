@@ -1,6 +1,32 @@
 #include "main.h"
 #include <stdlib.h>
 /**
+ * count_word - function to count the number of words in a string
+ * @s: string to evaluate
+ *
+ * Return: number of words
+ */
+int count_word(char *s)
+{
+	int flag, c, wo;
+
+	flag = 0;
+	wo = 0;
+
+	for (c = 0; s[c] != '\0'; c++)
+	{
+		if (s[c] == ' ')
+			flag = 0;
+		else if (flag == 0)
+		{
+			flag = 1;
+			wo++;
+		}
+	}
+
+	return (wo);
+}
+/**
  * strtow - splits a string into words
  * @str: the string to split
  *
