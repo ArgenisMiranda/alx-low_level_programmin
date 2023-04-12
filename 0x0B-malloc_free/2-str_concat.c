@@ -9,32 +9,32 @@
 char *str_concat(char *s1, char *s2)
 {
 	unsigned int size1 = 0, size2 = 0;
-	char *str, *con;
+	char *m, *ret;
 
-	ptr = s1;
+	m = s1;
 	if (s1)
-		while (*str++)
+		while (*m++)
 			size1++;
 	else
 		s1 = "";
 
-	ptr = s2;
+	m = s2;
 	if (s2)
-		while (*str++)
+		while (*m++)
 			size2++;
 	else
 		s2 = "";
 
-	con = malloc(size1 + size2 + 1);
-	if (!con)
+	ret = malloc(size1 + size2 + 1);
+	if (!ret)
 		return (NULL);
 
-	str = ret;
+	m = ret;
 	while (*s1)
-		*str++ = *s1++;
+		*m++ = *s1++;
 	while (*s2)
-		*str++ = *s2++;
-	*str = 0;
+		*m++ = *s2++;
+	*m = 0;
 
-	return (con);
+	return (ret);
 }
