@@ -19,14 +19,17 @@ char *str_concat(char *s1, char *s2)
 
 	a = 0;
 	while (s1[a] != '\0')
+{
 		conc_str[c] = s1[a];
 		a++;
 		c++;
+}
 	b = 0;
 	while (s2[b] != '\0')
+{
 		conc_str[c] = s2[b];
 		b++;
 		c++;
-
+}
 	return (conc_str);
 }
