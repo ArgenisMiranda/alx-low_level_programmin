@@ -1,14 +1,10 @@
-#include "notrebloh.h"
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 /**
  * _realloc - reallocates a memory block using malloc and free
  * @ptr: pointer to the memory previously allocated with malloc(old_size)
  * @old_size: size, in bytes, of the allocated space for ptr
  * @new_size: new size, in bytes, of the new memory block
- *
  * Return: pointer to the reallocated memory block, or NULL if realloc failed
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -29,6 +25,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	old_size = old_size < new_size ? old_size : new_size;
 	while (old_size--)
 		my[old_size] = ((char *)ptr)[old_size];
-	free(ptr);
+		free(ptr);
+
 	return (my);
 }
