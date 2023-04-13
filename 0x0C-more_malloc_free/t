@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * is_digit - checks if a string consists entirely of digits
+ * @str: the string to check
+ * Return: 1 if the string consists only of digits, 0 otherwise
+ */
+int is_digit(char *str)
+{
+    while (*str)
+	if (*str < '0' || *str > '9')
+            return (0);
+        str++;
+	return (1);
+/**
+ * mul - multiplies two numbers
+ * @num1: the first number
+ * @num2: the second number
+ */
+void mul(int num1, int num2)
+{
+    int result = num1 * num2;
+    printf("%d\n", result);
+}
+
+/**
+ * main - entry point
+ * @argc: the number of arguments
+ * @argv: an array of pointers to the arguments
+ * Return: 0 on success, 98 on error
+ */
+int main(int argc, char **argv)
+{
+    if (argc != 3)
+    {
+        printf("Error\n");
+        return (98);
+    }
+    if (!is_digit(argv[1]) || !is_digit(argv[2]))
+    {
+        printf("Error\n");
+        return (98);
+    }
+    int num1 = atoi(argv[1]);
+    int num2 = atoi(argv[2]);
+    mul(num1, num2);
+    return (0);
+}
