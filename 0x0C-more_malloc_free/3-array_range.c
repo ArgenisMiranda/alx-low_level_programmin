@@ -10,15 +10,22 @@
  */
 int *array_range(int min, int max)
 {
-	int *arr, my;
+	int *arr;
+	int my;
 
 	if (min > max)
 		return (NULL);
-	my = max - min + 1;
-	arr = malloc(sizeof(*arr) * my);
+	my = max - min;
+
+	arr = malloc(sizeof(int) * (my + 1));
 	if (!arr)
 		return (NULL);
-	while (my--)
-		p[my] = max--;
+	while (max > min)
+	{
+		arr[my] = max;
+		my--;
+		max--;
+	}
+	arr[my] = min;
 	return (arr);
 }
