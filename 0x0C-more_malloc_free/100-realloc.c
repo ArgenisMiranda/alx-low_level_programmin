@@ -8,8 +8,8 @@
  * Return: pointer to the reallocated memory block, or NULL if realloc failed
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
-}
-	char *my;
+{
+	char *p;
 
 	if (!ptr)
 		return (malloc(new_size));
@@ -18,14 +18,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == old_size)
 		return (ptr);
 
-	my = malloc(new_size);
-	if (!my)
+	p = malloc(new_size);
+	if (!p)
 		return (NULL);
 
 	old_size = old_size < new_size ? old_size : new_size;
 	while (old_size--)
-		my[old_size] = ((char *)ptr)[old_size];
-		free(ptr);
-
-	return (my);
+		p[old_size] = ((char *)ptr)[old_size];
+	free(ptr);
+	return (p);
 }
