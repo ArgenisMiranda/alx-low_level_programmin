@@ -1,5 +1,5 @@
 #include "dog.h"
-
+#include <stdlib.h>
 /**
  * _strcopy - copy read only data to mutatable.
  * @dst: pointer to copy char to.
