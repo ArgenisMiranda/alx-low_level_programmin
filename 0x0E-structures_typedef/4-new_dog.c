@@ -9,26 +9,26 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *nd;
-
-	nd = malloc(sizeof(dog_t));
-	if (nd == NULL)
+	dog_t *p;
+	/* reserving memory to struct*/
+	p = malloc(sizeof(dog_t));
+	if (p == NULL)
 		return (NULL);
-
+	/* Cpunting name pointer*/
 	if (name == NULL)
-{
-		free(nd);
+	{
+		free(p);
 		free(owner);
 		return (NULL);
 	}
 	if (owner == NULL)
 	{
-		free(nd);
+		free(p);
 		free(name);
 		return (NULL);
 	}
-	nd->name = name;
-	nd->age = age;
-	nd->owner = owner;
-	return (nd);
+	p->name = name;
+	p->age = age;
+	p->owner = owner;
+	return (p);
 }
