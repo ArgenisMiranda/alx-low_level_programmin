@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <stdlib.h>
 /**
  * free_dog - Frees memory allocated for a dog_t structure
  * @d: struc dog to be free
