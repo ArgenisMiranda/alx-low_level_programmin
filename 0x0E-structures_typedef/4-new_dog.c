@@ -1,5 +1,4 @@
 #include "dog.h"
-#include "main.h"
 
 /**
  * _strcopy - copy read only data to mutatable.
