@@ -1,5 +1,5 @@
 #include "dog.h"
-#include <string.h>
+#include <stdlib.h>
 /**
  * _strcopy - copy read only data to mutatable.
  * @dst: pointer to copy char to.
@@ -37,11 +37,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	d->name = malloc(a + 1);
 	if (!d->name)
 	free(d);
-	return (NULL);
+		return (NULL);
 	d->owner = malloc(b + 1);
 	if (!d->owner)
 	free(d);
-	return (NULL);
+		return (NULL);
 	_strcopy(d->name, name);
 	_strcopy(d->owner, owner);
 	d->age = age;
