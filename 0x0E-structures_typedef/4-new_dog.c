@@ -1,6 +1,5 @@
 #include "dog.h"
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * _strcopy - copy read only data to mutatable.
