@@ -1,6 +1,5 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * new_dog - entry point
  * @name: string from main, name of pet
