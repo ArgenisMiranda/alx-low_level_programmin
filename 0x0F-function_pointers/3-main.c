@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	int num1, num2, result;
 	char op;
 	int (*f)(int, int);
-	{
+{
 	printf("Error\n");
 		exit(98);
 		}
