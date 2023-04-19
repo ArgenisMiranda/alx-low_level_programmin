@@ -1,10 +1,9 @@
-#include "3-calc.h"
+#include "function_pointers.h"
 #include <stdio.h>
-#include <stdlib.h>
 /**
  * main - simple aritmetic operation
  * @argc: count of command line arguments
- * @argv: vector containing command line arguments
+ * @argv: containing command line arguments
  *
  * Return: Always 0 (Successful)
  */
