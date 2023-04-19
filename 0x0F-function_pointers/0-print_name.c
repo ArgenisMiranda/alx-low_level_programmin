@@ -2,10 +2,10 @@
 
 /**
  * print_name - prints a name
- * @name: string to add
- * @f: function that takes a char pointer as argument
+ * @name: the string name
+ * @f: the printing function pointer
  *
- * return: nothing
+ * Return: void
  */
 
 void print_name(char *name, void (*f)(char *))
