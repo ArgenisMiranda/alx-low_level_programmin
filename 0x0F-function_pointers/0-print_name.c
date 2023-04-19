@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 #include "function_pointers"
 
 /**
@@ -6,12 +7,12 @@
  * @name: string to print
  * @f: function that takes a char pointer as argument
  *
- * return: NOTHING
+ * return: nothing
  */
 
 void print_name(char *name, void (*f)(char *))
 {
-	if (name != NULL && f != NULL)
+	if (name == NULL || f == NULL)
 		return;
 	f(name);
 	}
