@@ -1,5 +1,5 @@
 #include "3-calc.h"
-
+#include <stdio.h>
 /**
  * main - simple aritmetic operation
  * @argc: the number of arguments
