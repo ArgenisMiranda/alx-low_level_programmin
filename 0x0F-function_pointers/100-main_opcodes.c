@@ -3,23 +3,23 @@
 
 /**
  * main - prints the opcodes of its own main function
- * @arg: the number of arguments
- * @arv: the array of arguments
+ * @argc: the number of arguments
+ * @argv: the array of arguments
  *
  * Return: 0  successfull
  */
-int main(int arg, char **arv)
+int main(int argc, char **argv)
 {
 	int num_bytes, i;
 	char *main_ptr;
 
-	if (arg != 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	num_bytes = atoi(arv[1]);
+	num_bytes = atoi(argv[1]);
 
 	if (num_bytes < 0)
 	{
