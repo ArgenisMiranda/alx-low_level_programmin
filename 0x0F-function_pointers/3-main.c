@@ -2,18 +2,18 @@
 #include <stdio.h>
 /**
  * main - simple aritmetic operation
- * @argc: the number of arguments
+ * @argmnt: the number of arguments
  * @argv: containing command line arguments
  *
  * Return: Always 0 (Successful)
  */
-int main(int argc, char *argv[])
+int main(int argmnt, char *argv[])
 {
 	int num1, num2, result;
 	char op;
 	int (*f)(int, int);
 
-	if (argc < 4)
+	if (argmnt < 4)
 	{
 		printf("Error\n");
 		return (1);
