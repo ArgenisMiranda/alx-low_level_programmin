@@ -11,31 +11,16 @@
  */
 int main(int argc, char **argv)
 {
-	int num_bytes, i;
-	char *main_ptr;
+	char *a = (char *)main;
+	int b;
 
 	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
+		printf("Error\n"), exit(1);
+	b = atoi(argv[1]);
+	if (b < 0)
+		printf("Error\n"), exit(2);
 
-	num_bytes = atoi(argv[1]);
-
-	if (num_bytes < 0)
-	{
-		printf("Error\n");
-		return (2);
-	}
-
-	main_ptr = (char *)main;
-
-	for (i = 0; i < num_bytes; i++)
-	{
-		printf("%02x", main_ptr[i]);
-	}
-
-	printf("\n");
-
+	while (b--)
+		printf("%02hhx%s", *a++, b ? " " : "\n");
 	return (0);
 }
