@@ -2,41 +2,40 @@
 #include <stdio.h>
 /**
  * main - simple aritmetic operation
- * @argmnt: the number of arguments
- * @argv: containing command line arguments
+ * @arg: the number of arguments
+ * @arv: containing command line arguments
  *
  * Return: Always 0 (Successful)
  */
-int main(int argmnt, char *argv[])
+int main(int arg, char *arv[])
 {
-	int num1, num2, result;
+	int n1, n2, result;
 	char op;
 	int (*f)(int, int);
 
-	if (argmnt < 4)
+	if (arg != 4)
 	{
 		printf("Error\n");
-		return (1);
+		return (98);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-
-	f = get_op_func(argv[2]);
-	if (f == NULL)
+	n1 = atoi(arv[1]);
+	n2 = atoi(arv[3]);
+	f = get_op_func(arv[2]);
+	if (f == NULL || arv[2][1] != 0)
 	{
 		printf("Error\n");
 		return (99);
 	}
 
-	op = *argv[2];
-	if ((op == '/' || op == '%') && num2 == 0)
+	op = *arv[2];
+	if ((op == '/' || op == '%') && n2 == 0)
 	{
 		printf("Error\n");
 		return (100);
 	}
 
-	result = f(num1, num2);
+	result = f(n1, n2);
 	printf("%d\n", result);
 	return (0);
 }
