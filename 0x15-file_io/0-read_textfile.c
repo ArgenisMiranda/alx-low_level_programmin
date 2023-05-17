@@ -8,6 +8,7 @@
  *
  * Return: The number of letters read and printed. 0 if there's an error.
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *file;
