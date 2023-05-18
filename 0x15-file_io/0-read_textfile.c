@@ -1,52 +1,35 @@
 #include "main.h"
-#include <stdlib.h>
-
 /**
- * read_textfile - Reads text file and prints the POSIX standard output.
- * @filename: The name of the file to read.
- * @letters: The number of letters to read and print.
+ * read_textfile - reads a text file and prints the letters
+ * @filename: filename.
+ * @letters: numbers of letters printed.
  *
- * Return: The number of letters read and printed. 0 if there's an error.
+ * Return: numbers of letters printed. It fails, returns 0.
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
-	char *buffer;
-	ssize_t read_count, write_count;
+	int fd;
+	ssize_t nrd, nwr;
+	char *fname;
 
-	if (filename == NULL)
+	if (!filename)
 		return (0);
 
-	file = fopen(filename, "r");
-	if (file == NULL)
+	fd = open(filename, O_RDONLY);
+
+	if (fd == -1)
 		return (0);
 
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
-	{
-		fclose(file);
+	fname = malloc(sizeof(char) * (letters));
+	if (!fname)
 		return (0);
+
+	nrd = read(fd, fname, letters);
+	nwr = write(STDOUT_FILENO, fname, nrd);
+
+	close(fd);
+
+	free(fname);
+
+	return (nwr);
 	}
-
-	read_count = fread(buffer, sizeof(char), letters, file);
-	if (read_count == -1)
-	{
-		free(buffer);
-		fclose(file);
-		return (0);
-	}
-
-	write_count = fwrite(buffer, sizeof(char), read_count, stdout);
-	if (write_count < read_count)
-	{
-		free(buffer);
-		fclose(file);
-		return (0);
-	}
-
-	free(buffer);
-	fclose(file);
-
-	return (write_count);
-}
