@@ -1,2 +1,2 @@
-programming-bit-manipulation
+ALX-programming-bit-manipulation
 Bit manipulation
