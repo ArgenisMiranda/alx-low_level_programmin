@@ -1,2 +1,2 @@
 ALX-programming-bit-manipulation
-Bit manipulation
+Programming task Bit manipulation
